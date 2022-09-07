@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.scss';
 
 const Home = () => {
-  return <div className={styles.home}></div>;
+  return <div className={styles.home}>asdasdsdasds</div>;
 };
 
 export default Home;
