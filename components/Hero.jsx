@@ -1,6 +1,7 @@
 import styles from './Hero.module.scss';
 import { useReducer } from 'react';
 import HeroSVG from './UI/HeroSVG';
+import { PRERENDER_REVALIDATE_ONLY_GENERATED_HEADER } from 'next/dist/server/api-utils';
 
 // btn = document.querySelector('.palone');
 
@@ -18,9 +19,9 @@ import HeroSVG from './UI/HeroSVG';
 
 const Hero = () => {
   return (
-    <div className={styles.logo}>
+    <section>
       <HeroSVG />
-    </div>
+    </section>
   );
 };
 

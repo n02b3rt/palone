@@ -16,7 +16,7 @@ const Home = () => {
       <Head>
         <title>Palone App</title>
       </Head>
-      <div>
+      <div className='wrapper'>
         {/* <Main display={visible} /> */}
         <Main />
         <Hero />
