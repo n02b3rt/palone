@@ -81,7 +81,7 @@
     opacity: 0;
   }
 }
-
+// 'g[data-name="PIWO"]'
 .animate {
   &_0 {
     animation: piana var(--time) ease-out;
@@ -118,7 +118,6 @@
   }
 
   &__kapsel {
-    opacity: 0;
     animation: wystrzelenieKapsla var(--time-kapsel);
   }
 }
