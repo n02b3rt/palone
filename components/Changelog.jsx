@@ -1,4 +1,4 @@
-import Collapsible from 'react-collapsible';
+// import Collapsible from 'react-collapsible';
 import styles from './Changelog.module.scss';
 import HorizontalLine from './UI/HorizontalLine';
 
@@ -10,11 +10,11 @@ const Changelog = () => {
       <HorizontalLine />
       <p>Logi</p>
       <div className={styles.listWrapper}>
-        <Collapsible trigger={`V${version}`} className={styles.list}>
+        {/* <Collapsible trigger={`V${version}`} className={styles.list}>
           <ul>
             <li>update timetable już śmiga (zmieńcie sobie default class bo sie oczywiście pozmieniały)</li>
           </ul>
-        </Collapsible>
+        </Collapsible> */}
       </div>
     </section>
   );
