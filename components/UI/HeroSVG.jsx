@@ -1,26 +1,43 @@
 import styles from './HeroSVG.module.scss';
-import { useReducer } from 'react';
+import { useRef, useState } from 'react';
+
+// btn = document.querySelector('.palone');
+
+// btn = document.addEventListener('click', () => {
+//   document.querySelector('#palone__wytrysk').style.display = 'block';
+//   document.querySelector('#palone__logo').style.display = 'none';
+//   document.querySelector('#palone__kapsel').classList.add('animate__kapsel');
+//   warstwy = document.querySelectorAll('g[data-name="PIWO"]');
+//   arr = Array.from(warstwy);
+//   for (i = 0; i <= warstwy.length - 1; i++) {
+//     arr[i].classList.add(`animate_${i}`);
+//     console.log(i);
+//   }
+// });
 
 const HeroSVG = () => {
-  const [state, setState] = useReducer(
-    (state, setState) => ({ ...state, ...setState }),
-    {
-      wytrysk: 'none',
-      logo: '1',
-    }
-  );
+  // const [g, setg] = useState('');
+
+  const [visibility, setVisibility] = useState({
+    logo: 'visible',
+    wytrysk: 'invisible',
+    kapsel: '',
+  });
+
+  const [anim, setAnim] = useState(false);
+
+  const g = useRef();
 
   const handleClick = () => {
-    setState({
-      wytrysk: 'block',
-      logo: '0',
+    setVisibility({
+      logo: 'invisible',
+      wytrysk: 'visible',
+      kapsel: styles.animate__kapsel,
     });
-    console.log(state);
-    console.log('dupa');
+    setAnim(true);
   };
 
-  console.log(state);
-  const { wytrysk, logo } = state;
+  console.log('a');
 
   return (
     <svg
@@ -75,7 +92,7 @@ const HeroSVG = () => {
           />
         </g>
       </g>
-      <g className={styles.palone__logo}>
+      <g className={`${styles.palone__logo} ${visibility.logo}`}>
         <g>
           <g id='wst_ka_0_Layer0_0_FILL' data-name='wst  ka 0 Layer0 0 FILL'>
             <path
@@ -113,7 +130,8 @@ const HeroSVG = () => {
           />
         </g>
       </g>
-      <g className={styles.palone__wytrysk}>
+      {/* @wytrysk */}
+      <g className={`${styles.palone__wytrysk} ${visibility.wytrysk}`}>
         <g id='Warstwa_1' data-name='Warstwa 1'>
           <g id='Warstwa_1-2' data-name='Warstwa 1-2'>
             <g id='Warstwa_1-2-2' data-name='Warstwa 1-2'>
@@ -182,7 +200,7 @@ const HeroSVG = () => {
             />
           </g>
         </g>
-        <g id='warstwaPiwo__1' data-name='PIWO'>
+        <g id='warstwaPiwo__1' className={`${anim ? styles.animate__0 : ''}`}>
           <path
             className={styles.cls__6}
             d='M323.72,186.73c-1.61,1.63-11.42-5.27-17.96-11.6-2.95-2.86-7.49-7.27-6.63-8.56,1.08-1.62,10.61,1.46,17.41,8.01,4.55,4.38,8.44,10.87,7.18,12.15Z'
@@ -196,7 +214,7 @@ const HeroSVG = () => {
             d='M325.39,190.02c10.73,1.39,39.87,1.34,49.37,.04,1.26-.17,2.77-.49,3.31-1.01,.92-.87-1.56-1.87-3.98-2.84-1.14-.46-2.68-1.08-5.2-1.69-8.19-1.99-18.48-1.93-22.34-1.9-7.89,.05-13.18,.77-14.95,1.03-4.04,.59-5.9,1.18-6.38,1.33-.41,.14-6.28,2.09-4.23,3.71,.9,.71,2.91,1.13,4.39,1.32Z'
           />
         </g>
-        <g id='warstwaPiwo__2' data-name='PIWO'>
+        <g id='warstwaPiwo__2' className={`${anim ? styles.animate__1 : ''}`}>
           <path
             className={styles.cls__6}
             d='M320.5,181.28c-.97,1.89-12.68,1.61-21.08,.21-3.79-.64-9.63-1.61-9.25-2.93,.47-1.63,10.61-3.9,19.33-2.47,5.82,.96,11.77,3.7,11.01,5.19h0Z'
@@ -218,7 +236,7 @@ const HeroSVG = () => {
             d='M326.21,189.1c10.73,1.92,39.87,1.85,49.37,.06,1.26-.24,2.77-.68,3.31-1.38,.92-1.21-1.56-2.58-3.98-3.92-1.14-.64-2.68-1.49-5.2-2.33-8.19-2.75-18.48-2.65-22.34-2.62-7.89,.07-13.18,1.06-14.95,1.41-4.04,.81-5.9,1.63-6.38,1.84-.41,.19-6.28,2.88-4.23,5.12,.9,.98,2.91,1.56,4.39,1.82h0Z'
           />
         </g>
-        <g id='warstwaPiwo__3' data-name='PIWO'>
+        <g id='warstwaPiwo__3' className={`${anim ? styles.animate__2 : ''}`}>
           <path
             className={styles.cls__6}
             d='M313.52,182.44c-1.08,2.09-14.08,1.84-23.39,.34-4.2-.68-10.67-1.73-10.24-3.18,.54-1.81,11.79-4.35,21.45-2.82,6.46,1.03,13.03,4.02,12.18,5.66h0Z'
@@ -240,7 +258,7 @@ const HeroSVG = () => {
             d='M326.21,188.35c10.73,1.92,39.87,1.85,49.37,.06,1.26-.24,2.77-.68,3.31-1.38,.92-1.21-1.56-2.58-3.98-3.92-1.14-.64-2.68-1.49-5.2-2.33-8.19-2.75-18.48-2.65-22.34-2.62-7.89,.07-13.18,1.06-14.95,1.41-4.04,.81-5.9,1.63-6.38,1.84-.41,.19-6.28,2.88-4.23,5.12,.9,.98,2.91,1.56,4.39,1.82h0Z'
           />
         </g>
-        <g id='warstwaPiwo__4' data-name='PIWO'>
+        <g id='warstwaPiwo__4' className={`${anim ? styles.animate__3 : ''}`}>
           <path
             className={styles.cls__6}
             d='M304.86,180.08c-1.38,2.31-16.47,2.75-27.21,1.63-4.85-.51-12.31-1.28-11.74-2.86,.72-1.98,13.95-5.33,25.09-4.2,7.45,.76,14.94,3.62,13.85,5.43h0Z'
@@ -262,7 +280,7 @@ const HeroSVG = () => {
             d='M325.01,189.53c10.73,2.06,39.87,1.98,49.37,.06,1.26-.26,2.77-.72,3.31-1.49,.92-1.29-1.56-2.77-3.98-4.2-1.14-.68-2.68-1.6-5.2-2.51-8.19-2.95-18.48-2.85-22.34-2.81-7.89,.08-13.18,1.13-14.95,1.52-4.04,.88-5.9,1.74-6.38,1.98-.41,.2-6.28,3.09-4.23,5.5,.9,1.05,2.91,1.67,4.39,1.96Z'
           />
         </g>
-        <g id='warstwaPiwo__5' data-name='PIWO'>
+        <g id='warstwaPiwo__5' className={`${anim ? styles.animate__4 : ''}`}>
           <path
             className={styles.cls__6}
             d='M298.81,180.87c-1.3,2.53-16.96,2.16-28.19,.28-5.07-.85-12.88-2.15-12.37-3.91,.64-2.19,14.19-5.22,25.84-3.3,7.79,1.28,15.73,4.95,14.71,6.93h0Z'
@@ -292,7 +310,7 @@ const HeroSVG = () => {
             d='M324.49,186.43c10.73,4.15,39.87,4,49.37,.13,1.26-.51,2.77-1.46,3.31-3,.92-2.61-1.56-5.59-3.98-8.49-1.14-1.37-2.68-3.22-5.2-5.06-8.19-5.95-18.48-5.75-22.34-5.67-7.89,.16-13.18,2.29-14.95,3.06-4.04,1.76-5.9,3.52-6.38,3.98-.41,.4-6.28,6.24-4.23,11.09,.9,2.12,2.91,3.38,4.39,3.95h0Z'
           />
         </g>
-        <g id='warstwaPiwo__6' data-name='PIWO'>
+        <g id='warstwaPiwo__6' className={`${anim ? styles.animate__5 : ''}`}>
           <path
             className={styles.cls__6}
             d='M292.88,177.43c-.67,3.1-17.71,6.67-30.4,7.45-5.73,.36-14.55,.91-14.5-1.16,.05-2.56,13.83-9.33,26.99-10.18,8.8-.57,18.44,1.43,17.91,3.88h0Z'
@@ -330,7 +348,7 @@ const HeroSVG = () => {
             d='M373.23,188.42c1.61,1.63,11.42-5.27,17.96-11.6,2.95-2.86,7.49-7.27,6.63-8.56-1.08-1.62-10.61,1.46-17.41,8.01-4.55,4.38-8.44,10.87-7.18,12.15Z'
           />
         </g>
-        <g id='warstwaPiwo__7' data-name='PIWO'>
+        <g id='warstwaPiwo__7' className={`${anim ? styles.animate__6 : ''}`}>
           <path
             className={styles.cls__6}
             d='M280.64,178.28c-.77,3.25-18.71,7.32-32.03,8.41-6.02,.49-15.27,1.26-15.18-.89,.11-2.67,14.7-10.01,28.51-11.18,9.24-.79,19.31,1.1,18.7,3.65h0Z'
@@ -368,7 +386,7 @@ const HeroSVG = () => {
             d='M325.73,190.05c-1.58,2.23-13.15-5.61-21.04-13.04-3.57-3.35-9.05-8.52-8.24-10.26,1.01-2.16,11.83,.84,20.03,8.52,5.48,5.14,10.5,13.02,9.25,14.78h0Z'
           />
         </g>
-        <g id='warstwaPiwo__8' data-name='PIWO'>
+        <g id='warstwaPiwo__8' className={`${anim ? styles.animate__7 : ''}`}>
           <path
             className={styles.cls__6}
             d='M265.45,179.35c-1.07,3-18.33,8.61-30.92,11.03-5.69,1.09-14.45,2.78-14.13,.84,.39-2.41,14.86-10.58,27.93-13.13,8.74-1.7,17.97-1.1,17.13,1.26h0Z'
@@ -406,7 +424,7 @@ const HeroSVG = () => {
             d='M314.79,178.83c-1.58,2.23-13.15-5.61-21.04-13.04-3.57-3.35-9.05-8.52-8.24-10.26,1.01-2.16,11.83,.84,20.03,8.52,5.48,5.14,10.5,13.02,9.25,14.78h0Z'
           />
         </g>
-        <g id='warstwaPiwo__9' data-name='PIWO'>
+        <g id='warstwaPiwo__9' className={`${anim ? styles.animate__8 : ''}`}>
           <path
             className={styles.cls__6}
             d='M248.31,181.92c-1.68,2.97-19.9,11.69-32.84,16.53-5.85,2.18-14.85,5.55-14.13,3.72,.88-2.28,16.89-12.78,30.32-17.82,8.99-3.38,17.98-4.75,16.66-2.42h0Z'
@@ -460,7 +478,7 @@ const HeroSVG = () => {
             d='M366.77,186.82c2.58,1.61,12.93-10.47,19.26-20.76,2.86-4.65,7.26-11.8,5.73-13.21-1.91-1.76-13.13,5.29-19.71,15.94-4.4,7.12-7.31,16.77-5.27,18.04h0Z'
           />
         </g>
-        <g id='warstwaPiwo__10' data-name='PIWO'>
+        <g id='warstwaPiwo__10' className={`${anim ? styles.animate__9 : ''}`}>
           <path
             className={styles.cls__6}
             d='M240.75,185.12c-1.86,3.08-20.94,12.67-34.45,18.11-6.1,2.46-15.49,6.24-14.68,4.35,1.01-2.36,17.89-13.65,31.91-19.32,9.38-3.8,18.68-5.57,17.22-3.14h0Z'
@@ -522,7 +540,7 @@ const HeroSVG = () => {
             d='M344.56,191.24c-1.26,1.18-5.35-6.16-7.69-12.54-1.06-2.88-2.69-7.32-1.92-8.31,.96-1.24,5.7,2.76,8.15,9.36,1.63,4.42,2.46,10.56,1.46,11.49Z'
           />
         </g>
-        <g id='warstwaPiwo__11' data-name='PIWO'>
+        <g id='warstwaPiwo__11' className={`${anim ? styles.animate__10 : ''}`}>
           <path
             className={styles.cls__6}
             d='M236.39,188.35c-2.27,3.43-23.91,15.14-39.13,21.98-6.87,3.09-17.44,7.85-16.42,5.77,1.28-2.59,20.64-15.95,36.43-23.08,10.56-4.77,20.89-7.37,19.11-4.67h0Z'
@@ -585,7 +603,8 @@ const HeroSVG = () => {
           />
         </g>
       </g>
-      <g className={styles.animate__kapsel}>
+      {/* @kapsel */}
+      <g className={`${styles.palone__kapsel} ${visibility.kapsel}`}>
         <path
           className={styles.cls__1}
           d='M327.48,190.05c5.88,.87,12.97,1.3,21.29,1.3s15.27-.43,21.15-1.3c5.83-.87,8.74-1.92,8.74-3.14s-2.91-2.22-8.74-3.1c-5.88-.87-12.92-1.3-21.15-1.3s-15.34,.43-21.29,1.3c-5.81,.89-8.71,1.92-8.71,3.1s2.9,2.27,8.71,3.14h0Z'

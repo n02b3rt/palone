@@ -1,8 +1,8 @@
 :root {
   // NOTE variables used for animation
 
-  // --time = determines the time with which an animation frame is executed - there are 11 of them
-  --time: 55ms;
+  //--time = determines the time with which an animation frame is executed - there are 11 of them
+  --time: 75ms;
 
   //  --time-kapsel = determines the duration of the cap animation = --time * 11
   --time-kapsel: 605ms;
@@ -48,12 +48,12 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: #222;
   }
 }
 
 .visible {
-  display: block;
+  display: block !important;
 }
 
 .invisible {

@@ -66,61 +66,80 @@
 .palone-pobierz {
   display: none;
 }
-#warstwaPiwo {
-  &__1,
-  &__2,
-  &__3,
-  &__4,
-  &__5,
-  &__6,
-  &__7,
-  &__8,
-  &__9,
-  &__10,
-  &__11 {
-    opacity: 0;
-  }
-}
-// 'g[data-name="PIWO"]'
+// #warstwaPiwo {
+//   &__1,
+//   &__2,
+//   &__3,
+//   &__4,
+//   &__5,
+//   &__6,
+//   &__7,
+//   &__8,
+//   &__9,
+//   &__10,
+//   &__11 {
+//     opacity: 0;
+//   }
+// }
+
 .animate {
-  &_0 {
+  &__0 {
+    opacity: 0;
     animation: piana var(--time) ease-out;
   }
-  &_1 {
+  &__1 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time));
   }
-  &_2 {
+  &__2 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 2);
   }
-  &_3 {
+  &__3 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 3);
   }
-  &_4 {
+  &__4 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 4);
   }
-  &_5 {
+  &__5 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 5);
   }
-  &_6 {
+  &__6 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 6);
   }
-  &_7 {
+  &__7 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 7);
   }
-  &_8 {
+  &__8 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 8);
   }
-  &_9 {
+  &__9 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 9);
   }
-  &_10 {
+  &__10 {
+    opacity: 0;
     animation: piana var(--time) ease-out calc(var(--time) * 10);
   }
 
   &__kapsel {
+    z-index: 50;
+    opacity: 0;
     animation: wystrzelenieKapsla var(--time-kapsel);
   }
 }
+
+// .animate__kapsel {
+//   z-index: 50;
+//   opacity: 1;
+//   animation: wystrzelenieKapsla 1s;
+// }
 
 // NOTE fucking animations
 @keyframes start-palone__logo {
