@@ -5,11 +5,15 @@ import Hero from '../components/Hero';
 import Main from '../components/Main';
 
 const Home = () => {
-  // const [visible, setVisible] = useState(false);
+  const [displayMain, setDisplayMain] = useState(false);
+  const [displayHero, setDisplayHero] = useState(true);
 
-  // const display = async () => setVisible(true);
-
-  // setTimeout(display, 5000);
+  const bottleClick = () => {
+    setDisplayMain(true);
+    setTimeout(() => {
+      setDisplayHero(false);
+    }, 1000);
+  };
 
   return (
     <>
@@ -17,10 +21,9 @@ const Home = () => {
         <title>Palone App</title>
       </Head>
       <div className='wrapper'>
-        {/* <Main display={visible} /> */}
-        <Main />
-        <Hero />
-        <Changelog />
+        <Main display={displayMain} />
+        <Hero display={displayHero} clickHandler={bottleClick} />
+        {/* <Changelog /> */}
       </div>
     </>
   );
