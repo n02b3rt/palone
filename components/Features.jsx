@@ -6,11 +6,8 @@ import PhoneMain from './UI/PhoneMain';
 
 const Features = ({ display }) => {
   return (
-    <section
-      id='home'
-      className={`${styles.features} ${display ? 'visible' : 'invisible'}`}
-    >
-      <div className={('device', 'device-galaxy-s8')}>
+    <section id='home' className={`${styles.features} ${display ? 'visible' : 'invisible'}`}>
+      <div className='device device-galaxy-s8'>
         <div className='device__sensors'></div>
         <div className='device__frame'>
           <div className={styles.phone}>

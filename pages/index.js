@@ -13,12 +13,12 @@ const Home = () => {
   const [displayHero, setDisplayHero] = useState(true);
 
   const bottleClick = () => {
-    setDisplayMain(true);
     // setDisplayTeam(true);
     setDisplayFeatures(true);
     setTimeout(() => {
       setDisplayHero(false);
-    }, 1000);
+      setDisplayMain(true);
+    }, 2000);
   };
 
   return (
