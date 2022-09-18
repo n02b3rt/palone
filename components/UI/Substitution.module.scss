@@ -1,0 +1,80 @@
+.main {
+  height: 88%;
+  width: 100%;
+  font-size: 1.4rem;
+  // font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.head {
+}
+
+.navbar {
+  --border: 1.5px solid white;
+  //
+  width: 100%;
+  height: 6%;
+  display: flex;
+  align-items: center;
+
+  //
+  background: #263240;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  font-size: 1rem;
+}
+
+.navigation {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  & > * {
+    --size: 1rem;
+    //
+    height: var(--size);
+    width: var(--size);
+    background-color: white;
+    clip-path: polygon(0 0, 0 100%, 60% 50%);
+  }
+  &__head {
+    text-align: center;
+    width: 60%;
+  }
+  &__larrow {
+    transform: rotate(180deg);
+  }
+}
+
+.substitiutution {
+  &__item {
+    background-color: #263240;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  &__schlclass {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  &__internal {
+    display: flex;
+  }
+  &__internal:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+  &__lesson {
+    text-align: center;
+    font-size: 2.5rem;
+    width: 20%;
+  }
+  &__content {
+    width: 92%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+}
