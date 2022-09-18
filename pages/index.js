@@ -28,8 +28,9 @@ const Home = () => {
         <title>Palone App</title>
       </Head>
       <div className='wrapper'>
-        <Features display={displayFeatures} />
         <Download display={displayFeatures} />
+        <Features display={displayFeatures} />
+
         <Main display={displayMain} />
         {/* <Team display={displayTeam} /> */}
         <Hero display={displayHero} clickHandler={bottleClick} />

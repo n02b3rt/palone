@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+.icon {
+  height: 4rem;
+  width: 4rem;
+  margin-right: 2rem;
+}
 .download {
+  color: #222;
   background-color: #f0f0f0;
   display: flex;
   justify-content: center;
@@ -6,22 +13,88 @@
 
   &__column {
     // background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     width: 50%;
   }
+  &__column:first-child {
+    transform: translateY(2rem);
+    align-items: flex-end;
+  }
+  &__column:last-child {
+    padding-left: 4rem;
+    align-items: flex-start;
+    transform: translateY(-2rem);
+  }
+  &__heading {
+    font-size: 3rem;
+
+    font-family: 'Mochiy Pop One', sans-serif;
+    text-transform: uppercase;
+  }
+  &__affter,
+  &__apple {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+  }
   &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    background-color: #333;
+    padding: 3rem 7.5rem;
+    border-radius: 10px;
+    font-size: 3rem;
+    color: white;
+  }
+  &__apple {
+    text-align: center;
+    padding: 0 2.5rem;
   }
 }
 
 .phone {
+  &__2 &__logo,
+  &__1 &__app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: space-between;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 34px;
+    background-color: #333;
+    overflow: hidden;
+  }
+
   &__1 {
     position: absolute;
-    transform: translateY(-5rem) scale(0.8);
+    transform: translate(4rem, -5rem) scale(0.8);
     z-index: 10;
   }
   &__2 {
     position: absolute;
-    transform: rotate(-15deg) translateX(-5rem) scale(0.8);
+    transform: rotate(-15deg) translateX(-10rem) scale(0.8);
+    z-index: 20;
   }
+  &__logo {
+    background-image: url(../public/logo.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  &__app {
+    background-image: url(../public/aplikacja.webp);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.phone {
 }
