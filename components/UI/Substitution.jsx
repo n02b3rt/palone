@@ -1,9 +1,9 @@
 // import { SassNumber } from 'sass';
 import styles from './Substitution.module.scss';
 
-const Substitution = () => {
+const Substitution = ({ isVisible }) => {
   return (
-    <article className={styles.main}>
+    <article className={styles.main} style={{ display: `${isVisible ? 'block' : 'none'}` }}>
       <nav className={styles.navbar}>
         <div className={styles.navigation}>
           <div className={styles.navigation__larrow}></div>
@@ -30,8 +30,7 @@ const Substitution = () => {
         <div className={styles.substitiutution__internal}>
           <span className={styles.substitiutution__lesson}>2</span>
           <span className={styles.substitiutution__content}>
-            jpol &rarr; matem &nbsp; E**** G**** &rarr; A*** W**** Zmień sale
-            lekcyjną: A24 &rarr; B04
+            jpol &rarr; matem &nbsp; E**** G**** &rarr; A*** W**** Zmień sale lekcyjną: A24 &rarr; B04
             <span className={styles.substitiutution__room}></span>
           </span>
         </div>

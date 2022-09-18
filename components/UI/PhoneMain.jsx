@@ -1,8 +1,8 @@
 import styles from './PhoneMain.module.scss';
 
-const PhoneMain = () => {
+const PhoneMain = ({ isVisible }) => {
   return (
-    <article className={styles.main}>
+    <article className={styles.main} style={{ display: `${isVisible ? 'block' : 'none'}` }}>
       <div className={styles.days}>
         <ul className={styles.days__list}>
           <li className={styles.days__item}>
