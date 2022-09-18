@@ -16,6 +16,7 @@ const Features = ({ display }) => {
         <div className='device__frame'>
           <div className={styles.phone}>
             <PhoneHeader />
+            {/* Tutaj ma się wyświetlać Substitution - gdy j******* w zastępstwa, no a PhoneMain - jak w plan lekcji na telefonie plus jako domyślny ma być chyba PhoneMain */}
             <Substitution />
             <PhoneMain />
             <PhoneFooter />
