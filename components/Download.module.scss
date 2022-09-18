@@ -3,6 +3,10 @@
   height: 4rem;
   width: 4rem;
   margin-right: 2rem;
+  @media (max-width: 375px) {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
 }
 .download {
   color: #222;
@@ -35,7 +39,7 @@
     font-family: 'Mochiy Pop One', sans-serif;
     text-transform: uppercase;
   }
-  &__affter,
+  &__after,
   &__apple {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
@@ -55,6 +59,71 @@
     text-align: center;
     padding: 0 2.5rem;
   }
+  @media (max-width: 933px) {
+    &__button {
+      padding: 2rem 5.5rem;
+    }
+    &__apple {
+      padding: 0;
+    }
+    &__after {
+      font-size: 1rem;
+      padding-bottom: 1rem;
+    }
+    &__column:last-child {
+      padding-left: 1rem;
+    }
+  }
+  @media (max-width: 687px) {
+    & {
+      flex-direction: column;
+    }
+    &__column {
+      width: 100%;
+    }
+    &__column:first-child {
+      transform: translateY(-5rem);
+      height: 45rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__column:last-child {
+      transform: translateY(-4rem);
+      padding-left: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__button {
+      padding: 2rem 5.5rem;
+    }
+    &__apple {
+      padding: 0;
+      font-size: 1rem;
+    }
+    &__after {
+      font-size: 1rem;
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    &__heading {
+    }
+  }
+  @media (max-width: 375px) {
+    &__column:first-child {
+      transform: translateY(-5rem) scale(0.8);
+    }
+
+    &__column:last-child {
+      transform: translateY(-6rem);
+    }
+
+    &__button {
+      padding: 1.5rem 5rem;
+      font-size: 2.5rem;
+    }
+  }
 }
 
 .phone {
@@ -62,7 +131,6 @@
   &__1 &__app {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     justify-content: space-between;
     z-index: -1;
     width: 100%;
@@ -74,6 +142,7 @@
 
   &__1 {
     position: absolute;
+    // display: fl;
     transform: translate(4rem, -5rem) scale(0.8);
     z-index: 10;
   }
@@ -81,6 +150,14 @@
     position: absolute;
     transform: rotate(-15deg) translateX(-10rem) scale(0.8);
     z-index: 20;
+  }
+  @media (max-width: 933px) {
+    &__1 {
+      transform: translate(4rem, -3rem) scale(0.5);
+    }
+    &__2 {
+      transform: rotate(-15deg) translateX(-5rem) scale(0.5);
+    }
   }
   &__logo {
     background-image: url(../public/logo.webp);
@@ -94,7 +171,4 @@
     background-size: contain;
     background-position: center;
   }
-}
-
-.phone {
 }

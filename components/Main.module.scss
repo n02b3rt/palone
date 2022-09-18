@@ -42,6 +42,22 @@
       width: 70rem;
       padding: 2rem;
     }
+    @media (max-width: 684px) {
+      &__p {
+        width: 80%;
+      }
+    }
+    @media (max-width: 425px) {
+      &__p {
+        width: 95%;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+      }
+      &__logo {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
   }
 
   .btn:link,

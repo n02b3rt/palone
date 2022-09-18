@@ -39,10 +39,13 @@ const Download = ({ display }) => {
       </div>
       <div className={styles.download__column}>
         <h1 className={styles.download__heading}>Palone APP</h1>
-        <p className={styles.download__affter}>
+        <p className={styles.download__after}>
           Aplikacja do naprawiania tego co edupage (elektryka) nie oferuje
         </p>
-        <div className={styles.download__button}>
+        <a
+          href='https://drive.google.com/u/0/uc?id=19R_k11Mov2PVyLYk5Mg30lmmylrrRvu_&export=download&confirm=t&uuid=ed2fe3d6-d9fb-4952-af5e-a514d9a4c122'
+          className={styles.download__button}
+        >
           <svg
             version='1.1'
             xmlns='http://www.w3.org/2000/svg'
@@ -55,7 +58,7 @@ const Download = ({ display }) => {
             ></path>
           </svg>
           Download
-        </div>
+        </a>
         <div className={styles.download__apple}>
           (Nie stać nas na japka - korea tylko open software)
         </div>
