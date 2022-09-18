@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Main from '../components/Main';
 import Team from '../components/Team';
 import Features from '../components/Features.jsx';
+import Download from '../components/Download';
 
 const Home = () => {
   const [displayMain, setDisplayMain] = useState(false);
@@ -28,6 +29,7 @@ const Home = () => {
       </Head>
       <div className='wrapper'>
         <Features display={displayFeatures} />
+        <Download display={displayFeatures} />
         <Main display={displayMain} />
         {/* <Team display={displayTeam} /> */}
         <Hero display={displayHero} clickHandler={bottleClick} />
