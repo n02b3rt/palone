@@ -18,7 +18,7 @@ const Home = () => {
     setDisplayFeatures(true);
     setTimeout(() => {
       setDisplayHero(false);
-      setDisplayMain(true);
+      // setDisplayMain(true);
     }, 2000);
   };
 
@@ -31,7 +31,7 @@ const Home = () => {
         <Download display={displayFeatures} />
         <Features display={displayFeatures} />
 
-        <Main display={displayMain} />
+        {/* <Main display={displayMain} /> */}
         {/* <Team display={displayTeam} /> */}
         <Hero display={displayHero} clickHandler={bottleClick} />
         {/* <Changelog /> */}
