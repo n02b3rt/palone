@@ -1,6 +1,10 @@
 import styles from './PhoneMain.module.scss';
 
-const PhoneMain = ({ isVisible }) => {
+interface Props {
+  isVisible: boolean;
+}
+
+const PhoneMain = ({ isVisible }: Props) => {
   return (
     <article className={styles.main} style={{ display: `${isVisible ? 'block' : 'none'}` }}>
       <div className={styles.days}>

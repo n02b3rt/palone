@@ -4,10 +4,14 @@ import Changelog from '../components/Changelog';
 import Hero from '../components/Hero';
 import Main from '../components/Main';
 import Team from '../components/Team';
-import Features from '../components/Features.jsx';
+import Features from '../components/Features';
 import Download from '../components/Download';
 
-const Home = () => {
+import type { NextComponentType, NextPageContext } from 'next';
+
+interface Props {}
+
+const Index: NextComponentType<NextPageContext, {}, Props> = (props: Props) => {
   const [displayMain, setDisplayMain] = useState(false);
   // const [displayTeam, setDisplayTeam] = useState(false);
   const [displayFeatures, setDisplayFeatures] = useState(false);
@@ -33,11 +37,14 @@ const Home = () => {
 
         {/* <Main display={displayMain} /> */}
         {/* <Team display={displayTeam} /> */}
-        <Hero display={displayHero} clickHandler={bottleClick} />
+        <Hero
+          display={displayHero}
+          clickHandler={bottleClick}
+        />
         {/* <Changelog /> */}
       </div>
     </>
   );
 };
 
-export default Home;
+export default Index;

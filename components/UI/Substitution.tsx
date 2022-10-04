@@ -1,7 +1,11 @@
 // import { SassNumber } from 'sass';
 import styles from './Substitution.module.scss';
 
-const Substitution = ({ isVisible }) => {
+interface Props {
+  isVisible: boolean;
+}
+
+const Substitution = ({ isVisible }: Props) => {
   return (
     <article className={styles.main} style={{ display: `${isVisible ? 'block' : 'none'}` }}>
       <nav className={styles.navbar}>

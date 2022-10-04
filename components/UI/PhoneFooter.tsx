@@ -2,7 +2,14 @@ import { useState } from 'react';
 import footer from './PhoneFooter.module.scss';
 import styles from './PhoneHeader.module.scss';
 
-const PhoneFooter = ({ showSubstitutions, showTimetable }) => {
+import type { NextComponentType, NextPageContext } from 'next';
+
+interface Props {
+  showSubstitutions: () => void;
+  showTimetable: () => void;
+}
+
+const PhoneFooter: NextComponentType<NextPageContext, {}, Props> = ({ showSubstitutions, showTimetable }: Props) => {
   const [substSelected, setSubstSelected] = useState(false);
 
   return (

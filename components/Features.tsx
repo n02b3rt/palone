@@ -6,7 +6,11 @@ import Substitution from './UI/Substitution';
 import { useState } from 'react';
 // import './devices.css/dist/devices.css';
 
-const Features = ({ display }) => {
+interface Props {
+  display: boolean;
+}
+
+const Features = ({ display }: Props) => {
   // To co ma wyświetlać się pierwsze ma true, a drugie ma false
   const [substitutionVisible, setSubstitutionVisible] = useState(false);
   const [timetableVisible, setTimetableVisible] = useState(true);
@@ -22,11 +26,8 @@ const Features = ({ display }) => {
   };
 
   return (
-    <section
-      id='home'
-      className={`${styles.features} ${display ? 'visible' : 'invisible'}`}
-    >
-      <div className={('device', 'device-galaxy-s8')}>
+    <section id='home' className={`${styles.features} ${display ? 'visible' : 'invisible'}`}>
+      <div className='device device-galaxy-s8'>
         <div className='device__sensors'></div>
         <div className='device__frame'>
           <div className={styles.phone}>
@@ -34,21 +35,18 @@ const Features = ({ display }) => {
             {/* Tutaj ma się wyświetlać Substitution - gdy j******* w zastępstwa, no a PhoneMain - jak w plan lekcji na telefonie plus jako domyślny ma być chyba PhoneMain */}
             <Substitution isVisible={substitutionVisible} />
             <PhoneMain isVisible={timetableVisible} />
-            <PhoneFooter
-              showSubstitutions={showSubstitutions}
-              showTimetable={showTimetable}
-            />
+            <PhoneFooter showSubstitutions={showSubstitutions} showTimetable={showTimetable} />
           </div>
         </div>
         {/* <Image className='device-screen' src='...' /> */}
         {/* cześć */}
-
-        <div className='device__stripe'></div>
-        <div className='device__header'></div>
-
-        <div className='device__btns'></div>
-        <div className='device__power'></div>
       </div>
+
+      <div className='device__stripe'></div>
+      <div className='device__header'></div>
+
+      <div className='device__btns'></div>
+      <div className='device__power'></div>
     </section>
   );
 };

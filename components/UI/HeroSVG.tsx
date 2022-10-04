@@ -2,9 +2,12 @@ import styles from './HeroSVG.module.scss';
 import { useState } from 'react';
 
 import * as Scroll from 'react-scroll';
-let scroll = Scroll.animateScroll;
 
-const HeroSVG = ({ clickHandler }) => {
+interface Props {
+  clickHandler: () => void;
+}
+
+const HeroSVG = ({ clickHandler }: Props) => {
   const [visibility, setVisibility] = useState({
     logo: 'visible',
     wytrysk: 'invisible',
@@ -31,7 +34,7 @@ const HeroSVG = ({ clickHandler }) => {
         handleClick();
         clickHandler();
         setTimeout(() => {
-          window.location = '#home';
+          window.location.href = '#home';
         }, 555);
       }}
       style={{ cursor: 'pointer' }}
